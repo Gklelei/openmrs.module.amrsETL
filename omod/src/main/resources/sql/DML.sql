@@ -1322,50 +1322,50 @@ CREATE PROCEDURE sp_populate_etl_mch_delivery()
 				e.encounter_id,
 				e.date_created,
 				if(max(o.date_created) > min(e.date_created),max(o.date_created),NULL) as date_last_modified,
-				max(if(o.concept_id=1590,o.value_numeric,null)) as number_of_anc_visits,
-				max(if(o.concept_id=160704,o.value_coded,null)) as vaginal_examination,
-        max(if(o.concept_id=1282 and o.value_coded in (81369,104590,1107),o.value_coded,null)) as uterotonic_given,
-        max(if(o.concept_id=159369,o.value_coded,null)) as chlohexidine_applied_on_code_stump,
-        max(if(o.concept_id=984,o.value_coded,null)) as vitamin_K_given,
-        max(if(o.concept_id=161094,o.value_coded,null)) as kangaroo_mother_care_given,
-        max(if(o.concept_id=1396,o.value_coded,null)) as testing_done_in_the_maternity_hiv_status,
-        max(if(o.concept_id=161930,o.value_coded,null)) as infant_provided_with_arv_prophylaxis,
-        max(if(o.concept_id=163783,o.value_coded,null)) as mother_on_haart_during_anc,
-        max(if(o.concept_id=166665,o.value_coded,null)) as mother_started_haart_at_maternity,
-        max(if(o.concept_id=299,o.value_coded,null)) as vdrl_rpr_results,
-        max(if(o.concept_id=1427,o.value_datetime,null)) as date_of_last_menstrual_period,
+				max(if(o.concept_id=7086,o.value_numeric,null)) as number_of_anc_visits,
+				max(if(o.concept_id=12088,o.value_coded,null)) as vaginal_examination,
+        max(if(o.concept_id=12086,o.value_coded,null)) as uterotonic_given,
+        max(if(o.concept_id=12090,o.value_coded,null)) as chlohexidine_applied_on_code_stump,
+        max(if(o.concept_id=12091,o.value_coded,null)) as vitamin_K_given,
+        max(if(o.concept_id=12089,o.value_coded,null)) as kangaroo_mother_care_given,
+        max(if(o.concept_id=1357,o.value_coded,null)) as testing_done_in_the_maternity_hiv_status,
+        max(if(o.concept_id=162131,o.value_coded,null)) as infant_provided_with_arv_prophylaxis,
+        max(if(o.concept_id=10469,o.value_coded,null)) as mother_on_haart_during_anc,
+        max(if(o.concept_id=10923,o.value_coded,null)) as mother_started_haart_at_maternity,
+        max(if(o.concept_id=7577,o.value_coded,null)) as vdrl_rpr_results,
+        max(if(o.concept_id=1836,o.value_datetime,null)) as date_of_last_menstrual_period,
         max(if(o.concept_id=5596,o.value_datetime,null)) as estimated_date_of_delivery,
-        max(if(o.concept_id=164359,o.value_text,null)) as reason_for_referral,
+        max(if(o.concept_id=10516,o.value_text,null)) as reason_for_referral,
 				max(if(o.concept_id=162054,o.value_text,null)) as admission_number,
-				max(if(o.concept_id=1789,o.value_numeric,null)) as duration_of_pregnancy,
+				max(if(o.concept_id=6225,o.value_numeric,null)) as duration_of_pregnancy,
 				max(if(o.concept_id=5630,o.value_coded,null)) as mode_of_delivery,
 				max(if(o.concept_id=5599,o.value_datetime,null)) as date_of_delivery,
-				max(if(o.concept_id=161928,o.value_numeric,null)) as blood_loss,
-				max(if(o.concept_id=1856,o.value_coded,null)) as condition_of_mother,
-				max(if(o.concept_id=159949,o.value_coded,null)) as delivery_outcome,
-				max(if(o.concept_id=159603,o.value_numeric,null)) as apgar_score_1min,
-				max(if(o.concept_id=159604,o.value_numeric,null)) as apgar_score_5min,
-				max(if(o.concept_id=159605,o.value_numeric,null)) as apgar_score_10min,
-				max(if(o.concept_id=162131,o.value_coded,null)) as resuscitation_done,
-				max(if(o.concept_id=1572,o.value_coded,null)) as place_of_delivery,
-				max(if(o.concept_id=1473,o.value_text,null)) as delivery_assistant,
-				max(if(o.concept_id=1379 and o.value_coded=161651,o.value_coded,null)) as counseling_on_infant_feeding,
-				max(if(o.concept_id=1379 and o.value_coded=161096,o.value_coded,null)) as counseling_on_exclusive_breastfeeding,
-				max(if(o.concept_id=1379 and o.value_coded=162091,o.value_coded,null)) as counseling_on_infant_feeding_for_hiv_infected,
-				max(if(o.concept_id=1151,o.value_coded,null)) as mother_decision,
-				max(if(o.concept_id=163454,o.value_coded,null)) as placenta_complete,
-				max(if(o.concept_id=1602,o.value_coded,null)) as maternal_death_audited,
-				max(if(o.concept_id=1573,o.value_coded,null)) as cadre,
-				max(if(o.concept_id=120216,o.value_coded,null)) as delivery_complications,
+				max(if(o.concept_id=10422,o.value_numeric,null)) as blood_loss,
+				max(if(o.concept_id=10423,o.value_coded,null)) as condition_of_mother,
+				max(if(o.concept_id=6224,o.value_coded,null)) as delivery_outcome,
+				max(if(o.concept_id=6430,o.value_numeric,null)) as apgar_score_1min,
+				max(if(o.concept_id=6431,o.value_numeric,null)) as apgar_score_5min,
+				max(if(o.concept_id=6432,o.value_numeric,null)) as apgar_score_10min,
+				max(if(o.concept_id=8562,o.value_coded,null)) as resuscitation_done,
+				max(if(o.concept_id=2368,o.value_coded,null)) as place_of_delivery,
+				max(if(o.concept_id=12092,o.value_text,null)) as delivery_assistant,
+				max(if(o.concept_id=1368,o.value_coded,null)) as counseling_on_infant_feeding,
+				max(if(o.concept_id=10939,o.value_coded,null)) as counseling_on_exclusive_breastfeeding,
+				max(if(o.concept_id=10937,o.value_coded,null)) as counseling_on_infant_feeding_for_hiv_infected,
+				max(if(o.concept_id=10996,o.value_coded,null)) as mother_decision,
+				max(if(o.concept_id=10428,o.value_coded,null)) as placenta_complete,
+				max(if(o.concept_id=1570,o.value_coded,null)) as maternal_death_audited,
+				max(if(o.concept_id=11273,o.value_coded,null)) as cadre,
+				max(if(o.concept_id=6653,o.value_coded,null)) as delivery_complications,
 				max(if(o.concept_id=1576,o.value_coded,null)) as coded_delivery_complications,
-				max(if(o.concept_id=162093,o.value_text,null)) as other_delivery_complications,
-				max(if(o.concept_id=159616,o.value_numeric,null)) as duration_of_labor,
-				max(if(o.concept_id=1587,o.value_coded,null)) as baby_sex,
-				max(if(o.concept_id=159917,o.value_coded,null)) as baby_condition,
-				max(if(o.concept_id=1282 and o.value_coded = 84893,1,0)) as teo_given,
-				max(if(o.concept_id=5916,o.value_numeric,null)) as birth_weight,
-				max(if(o.concept_id=161543,o.value_coded,null)) as bf_within_one_hour,
-				max(if(o.concept_id=164122,o.value_coded,null)) as birth_with_deformity,
+				max(if(o.concept_id=7261,o.value_text,null)) as other_delivery_complications,
+				max(if(o.concept_id=6225,o.value_numeric,null)) as duration_of_labor,
+				max(if(o.concept_id=6228,o.value_coded,null)) as baby_sex,
+				max(if(o.concept_id=8566,o.value_coded,null)) as baby_condition,
+				max(if(o.concept_id=10426 and o.value_coded = 84893,1,0)) as teo_given,
+				max(if(o.concept_id=6433,o.value_numeric,null)) as birth_weight,
+				max(if(o.concept_id=10425,o.value_coded,null)) as bf_within_one_hour,
+				max(if(o.concept_id=10429,o.value_coded,null)) as birth_with_deformity,
 				max(if(t.test_1_result is not null, t.kit_name, null)) as test_1_kit_name,
 				max(if(t.test_1_result is not null, t.lot_no, null)) as test_1_kit_lot_no,
 				max(if(t.test_1_result is not null, t.expiry_date, null)) as test_1_kit_expiry,
@@ -1378,23 +1378,23 @@ CREATE PROCEDURE sp_populate_etl_mch_delivery()
 				max(if(t.test_3_result is not null, t.lot_no, null)) as test_3_kit_lot_no,
 				max(if(t.test_3_result is not null, t.expiry_date, null)) as test_3_kit_expiry,
 				max(if(t.test_3_result is not null, t.test_3_result, null)) as test_3_result,
-				max(if(o.concept_id=159427,(case o.value_coded when 703 then "Positive" when 664 then "Negative" when 1138 then "Inconclusive" else "" end),null)) as final_test_result,
-				max(if(o.concept_id=164848,(case o.value_coded when 1065 then "Yes" when 1066 then "No" else "" end),null)) as patient_given_result,
-				max(if(o.concept_id=161557,o.value_coded,null)) as partner_hiv_tested,
-				max(if(o.concept_id=1436,o.value_coded,null)) as partner_hiv_status,
-				max(if(o.concept_id=1109,o.value_coded,null)) as prophylaxis_given,
-				max(if(o.concept_id = 1282 and o.value_coded = 160123,1,0)) as baby_azt_dispensed,
-				max(if(o.concept_id = 1282 and o.value_coded = 80586,1,0)) as baby_nvp_dispensed,
-				max(if(o.concept_id=159395,o.value_text,null)) as clinical_notes
+				max(if(o.concept_id=1357,(case o.value_coded when 703 then "Positive" when 664 then "Negative" when 1138 then "Inconclusive" else "" end),null)) as final_test_result,
+				max(if(o.concept_id=1357,(case o.value_coded when 1065 then "Yes" when 1066 then "No" else "" end),null)) as patient_given_result,
+				max(if(o.concept_id=2312,o.value_coded,null)) as partner_hiv_tested,
+				max(if(o.concept_id=2313,o.value_coded,null)) as partner_hiv_status,
+				max(if(o.concept_id=2370,o.value_coded,null)) as prophylaxis_given,
+				max(if(o.concept_id = 1995 and o.value_coded = 160123,1,0)) as baby_azt_dispensed, --
+				max(if(o.concept_id = 8523 and o.value_coded = 80586,1,0)) as baby_nvp_dispensed, --
+				max(if(o.concept_id=9467,o.value_text,null)) as clinical_notes
 
-			from encounter e
-				inner join person p on p.person_id=e.patient_id and p.voided=0
-				inner join obs o on e.encounter_id = o.encounter_id and o.voided =0
-														and o.concept_id in(162054,1590,160704,1282,159369,984,161094,1396,161930,163783,166665,299,1427,5596,164359,1789,5630,5599,161928,1856,162093,159603,159604,159605,162131,1572,1473,1379,1151,163454,1602,1573,162093,1576,120216,159616,1587,159917,1282,5916,161543,164122,159427,164848,161557,1436,1109,5576,159595,163784,159395,159949)
+			from amrs.encounter e
+				inner join amrs.person p on p.person_id=e.patient_id and p.voided=0
+				inner join amrs.obs o on e.encounter_id = o.encounter_id and o.voided =0
+														and o.concept_id in(7086,12088,12086,12090,12091,12089,1357,162131,10469,7577,1836,5596,10516,162054,6225,5630,5599,10422,10423,6224,6430,6431,6432,8562,2368,12092,1368,10939,10937,10996,10428,1570,11273,6653,1576,7261,6225,6228,8566,10426,6433,10425,10429,1357,1357,2312,2313,2370)
 				inner join
 				(
-					select form_id, uuid,name from form where
-						uuid in('496c7cc3-0eea-4e84-a04c-2292949e2f7f')
+					select form_id, uuid,name from amrs.form where
+						uuid in('854e9b76-72f8-4a92-b9f4-3bb63eaefc7e')
 				) f on f.form_id=e.form_id
 				left join (
 										select
@@ -1407,10 +1407,10 @@ CREATE PROCEDURE sp_populate_etl_mch_delivery()
 											max(if(o.concept_id=164962, (case o.value_coded when 164960 then "Determine" when 164961 then "First Response" when 165351 then "Dual Kit" when 169126 then "One step" when 169127 then "Trinscreen" else "" end),null)) as kit_name ,
 											max(if(o.concept_id=164964,trim(o.value_text),null)) as lot_no,
 											max(if(o.concept_id=162502,date(o.value_datetime),null)) as expiry_date
-										from obs o
-											 inner join encounter e on e.encounter_id = o.encounter_id
-                                             inner join person p on p.person_id = o.person_id and p.voided=0
-											 inner join form f on f.form_id=e.form_id and f.uuid in ('496c7cc3-0eea-4e84-a04c-2292949e2f7f')
+										from amrs.obs o
+											 inner join amrs.encounter e on e.encounter_id = o.encounter_id
+                                             inner join amrs.person p on p.person_id = o.person_id and p.voided=0
+											 inner join amrs.form f on f.form_id=e.form_id and f.uuid in ('854e9b76-72f8-4a92-b9f4-3bb63eaefc7e')
 										 where o.concept_id in (1040, 1326, 1000630, 164962, 164964, 162502) and o.voided=0
 										 group by e.encounter_id, o.obs_group_id
 									 ) t on e.encounter_id = t.encounter_id
@@ -1455,23 +1455,23 @@ CREATE PROCEDURE sp_populate_etl_mch_discharge()
 				e.encounter_id,
 				e.date_created,
 				if(max(o.date_created) > min(e.date_created),max(o.date_created),NULL) as date_last_modified,
-				max(if(o.concept_id=161651,o.value_coded,null)) as counselled_on_feeding,
-				max(if(o.concept_id=159926,o.value_coded,null)) as baby_status,
-				max(if(o.concept_id=161534,o.value_coded,null)) as vitamin_A_dispensed,
-				max(if(o.concept_id=162051,o.value_text,null)) as birth_notification_number,
-				max(if(o.concept_id=162093,o.value_text,null)) as condition_of_mother,
-				max(if(o.concept_id=1641,o.value_datetime,null)) as discharge_date,
-				max(if(o.concept_id=160481,o.value_coded,null)) as referred_from,
-				max(if(o.concept_id=163145,o.value_coded,null)) as referred_to,
-				max(if(o.concept_id=159395,o.value_text,null)) as clinical_notes
-			from encounter e
-				inner join person p on p.person_id=e.patient_id and p.voided=0
-				inner join obs o on e.encounter_id = o.encounter_id and o.voided =0
-														and o.concept_id in(161651,159926,161534,162051,162093,1641,160481,163145,159395)
+				max(if(o.concept_id=1368,o.value_coded,null)) as counselled_on_feeding,
+				max(if(o.concept_id=10938,o.value_coded,null)) as baby_status,
+				max(if(o.concept_id=6660,o.value_coded,null)) as vitamin_A_dispensed,
+				max(if(o.concept_id=8558,o.value_text,null)) as birth_notification_number,
+				max(if(o.concept_id=8561,o.value_text,null)) as condition_of_mother,
+				max(if(o.concept_id=1869,o.value_datetime,null)) as discharge_date,
+				max(if(o.concept_id=6749,o.value_coded,null)) as referred_from,
+				max(if(o.concept_id=10927,o.value_coded,null)) as referred_to,
+				max(if(o.concept_id=10516,o.value_text,null)) as clinical_notes
+			from amrs.encounter e
+				inner join amrs.person p on p.person_id=e.patient_id and p.voided=0
+				inner join amrs.obs o on e.encounter_id = o.encounter_id and o.voided =0
+														and o.concept_id in(1368,10938,6660,8558,8561,1869,6749,10927,10516)
 				inner join
 				(
-					select form_id, uuid,name from form where
-						uuid in('af273344-a5f9-11e8-98d0-529269fb1459')
+					select form_id, uuid,name from amrs.form where
+						uuid in('67d04ed7-c448-4270-92a4-3c8a01af9196')
 				) f on f.form_id=e.form_id
 				where e.voided=0
 			group by e.encounter_id ;

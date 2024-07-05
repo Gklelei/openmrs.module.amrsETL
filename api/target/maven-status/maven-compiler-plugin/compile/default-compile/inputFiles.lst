@@ -1,0 +1,7 @@
+/Users/directorict/Documents/OpenMRS3.X/backend/openmrs-module-amrsetl/api/src/main/java/org/openmrs/module/amrsetl/task/RefreshETLTablesTask.java
+/Users/directorict/Documents/OpenMRS3.X/backend/openmrs-module-amrsetl/api/src/main/java/org/openmrs/module/amrsetl/AmrsetlConfig.java
+/Users/directorict/Documents/OpenMRS3.X/backend/openmrs-module-amrsetl/api/src/main/java/org/openmrs/module/amrsetl/AmrsetlActivator.java
+/Users/directorict/Documents/OpenMRS3.X/backend/openmrs-module-amrsetl/api/src/main/java/org/openmrs/module/amrsetl/api/impl/AmrsetlServiceImpl.java
+/Users/directorict/Documents/OpenMRS3.X/backend/openmrs-module-amrsetl/api/src/main/java/org/openmrs/module/amrsetl/api/AmrsetlService.java
+/Users/directorict/Documents/OpenMRS3.X/backend/openmrs-module-amrsetl/api/src/main/java/org/openmrs/module/amrsetl/api/dao/AmrsetlDao.java
+/Users/directorict/Documents/OpenMRS3.X/backend/openmrs-module-amrsetl/api/src/main/java/org/openmrs/module/amrsetl/Item.java

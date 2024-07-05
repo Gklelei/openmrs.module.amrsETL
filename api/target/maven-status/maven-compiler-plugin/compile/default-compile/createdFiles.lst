@@ -1,0 +1,8 @@
+org/openmrs/module/amrsetl/api/AmrsetlService.class
+org/openmrs/module/amrsetl/task/RefreshETLTablesTask$1.class
+org/openmrs/module/amrsetl/task/RefreshETLTablesTask.class
+org/openmrs/module/amrsetl/AmrsetlConfig.class
+org/openmrs/module/amrsetl/Item.class
+org/openmrs/module/amrsetl/api/impl/AmrsetlServiceImpl.class
+org/openmrs/module/amrsetl/AmrsetlActivator.class
+org/openmrs/module/amrsetl/api/dao/AmrsetlDao.class

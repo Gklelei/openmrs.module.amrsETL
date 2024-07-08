@@ -100,7 +100,7 @@
 	-->
 	<!-- /Servlets -->
 	<globalProperty>
-		<property>kenyaemr.reacreate_etls_on_startup</property>
+		<property>amrs.reacreate_etls_on_startup</property>
 		<defaultValue>yes</defaultValue>
 		<description>
 			A property that controls whether the reporting ETL and datatools tables should be recreated on system startup.
@@ -108,7 +108,7 @@
 		</description>
 	</globalProperty>
 	<globalProperty>
-		<property>kenyaemr.reacreate_datatools_on_startup</property>
+		<property>amrs.reacreate_datatools_on_startup</property>
 		<defaultValue>no</defaultValue>
 		<description>
 			A property that controls whether the reporting datatools tables should be recreated on system startup.

@@ -2342,34 +2342,36 @@ insert into amrs_etl.etl_tb_screening(
     )
 select
        e.patient_id, e.uuid, e.creator, e.visit_id, date(e.encounter_datetime) as visit_date, e.encounter_id, e.location_id,
-       max(if(o.concept_id=1729 and o.value_coded =159799,o.value_coded,null)) as cough_for_2wks_or_more,
-       max(if(o.concept_id=1729 and o.value_coded in (124068,1066),o.value_coded,null)) confirmed_tb_contact,
-       max(if(o.concept_id=1729 and o.value_coded =1494,o.value_coded,null)) fever_for_2wks_or_more,
-       max(if(o.concept_id=1729 and o.value_coded =832,o.value_coded,null)) as noticeable_weight_loss,
-       max(if(o.concept_id=1729 and o.value_coded =133027,o.value_coded,null)) as night_sweat_for_2wks_or_more,
-       max(if(o.concept_id=1729 and o.value_coded =116334,o.value_coded,null)) as lethargy,
-       max(if(o.concept_id=1271 and o.value_coded =307,o.value_coded,null)) as spatum_smear_ordered,
-       max(if(o.concept_id=1271 and o.value_coded =12,o.value_coded,null)) as chest_xray_ordered,
-       max(if(o.concept_id=1271 and o.value_coded = 162202,o.value_coded,null)) as genexpert_ordered,
-       max(if(o.concept_id=307,o.value_coded,null)) as spatum_smear_result,
-       max(if(o.concept_id=12,o.value_coded,null)) as chest_xray_result,
-       max(if(o.concept_id=162202,o.value_coded,null)) as genexpert_result,
-       max(if(o.concept_id=1272,o.value_coded,null)) as referral,
-       max(if(o.concept_id=163752,o.value_coded,null)) as clinical_tb_diagnosis,
-       max(if(o.concept_id=1659,o.value_coded, null)) as resulting_tb_status,
-       max(if(o.concept_id=163414,o.value_coded,null)) as contact_invitation,
-       max(if(o.concept_id=162275,o.value_coded,null)) as evaluated_for_ipt,
-       max(if(o.concept_id=162309,o.value_coded,null)) as started_anti_TB,
+       max(if(o.concept_id=6171 and o.value_coded =159799,o.value_coded,null)) as cough_for_2wks_or_more,
+       max(if(o.concept_id=8067 and o.value_coded in (124068,1066),o.value_coded,null)) confirmed_tb_contact,
+       max(if(o.concept_id=8065 and o.value_coded =1494,o.value_coded,null)) fever_for_2wks_or_more,
+       max(if(o.concept_id=	832 and o.value_coded =832,o.value_coded,null)) as noticeable_weight_loss, 
+       max(if(o.concept_id=8061 and o.value_coded =133027,o.value_coded,null)) as night_sweat_for_2wks_or_more,
+       max(if(o.concept_id=5949 and o.value_coded =116334,o.value_coded,null)) as lethargy, 
+       max(if(o.concept_id=307 and o.value_coded =307,o.value_coded,null)) as spatum_smear_ordered,
+       max(if(o.concept_id=7113 and o.value_coded =12,o.value_coded,null)) as chest_xray_ordered,
+       max(if(o.concept_id=8064 and o.value_coded = 162202,o.value_coded,null)) as genexpert_ordered, 
+       max(if(o.concept_id=8070,o.value_coded,null)) as spatum_smear_result,
+       max(if(o.concept_id=12,o.value_coded,null)) as chest_xray_result, 
+       max(if(o.concept_id=8070,o.value_coded,null)) as genexpert_result,
+       max(if(o.concept_id=1932,o.value_coded,null)) as referral,
+       max(if(o.concept_id=9043,o.value_coded,null)) as clinical_tb_diagnosis,
+       max(if(o.concept_id=8292,o.value_coded, null)) as resulting_tb_status,
+       max(if(o.concept_id=163414,o.value_coded,null)) as contact_invitation, -- *
+       max(if(o.concept_id=7502,o.value_coded,null)) as evaluated_for_ipt,
+       max(if(o.concept_id=10677,o.value_coded,null)) as started_anti_TB,
        max(if(o.concept_id=1113, date(o.value_datetime),null)) as tb_treatment_start_date,
        max(if(o.concept_id=1109,o.value_coded,null)) as tb_prophylaxis,
        "" as notes, -- max(case o.concept_id when 160632 then value_text else "" end) as notes
-       max(if(o.concept_id=161643,o.value_coded,null)) as person_present,
+       max(if(o.concept_id=1412,o.value_coded,null)) as person_present,
        e.date_created as date_created,
        if(max(o.date_created) > min(e.date_created),max(o.date_created),NULL) as date_last_modified
-from encounter e
-       inner join person p on p.person_id=e.patient_id and p.voided=0
-       inner join form f on f.form_id=e.form_id and f.uuid in ("22c68f86-bbf0-49ba-b2d1-23fa7ccf0259", "59ed8e62-7f1f-40ae-a2e3-eabe350277ce","23b4ebbd-29ad-455e-be0e-04aa6bc30798","72aa78e0-ee4b-47c3-9073-26f3b9ecc4a7")
-       inner join obs o on o.encounter_id = e.encounter_id and o.concept_id in (1659, 1113, 160632,161643,1729,1271,307,12,162202,1272,163752,163414,162275,162309,1109) and o.voided=0
+from amrs.encounter e
+       inner join amrs.person p on p.person_id=e.patient_id and p.voided=0
+       inner join amrs.form f on f.form_id=e.form_id and f.uuid in ('8d5b3108-c2cc-11de-8d13-0010c6dffd0f','fc8c1694-90fc-46a8-962b-73ce9a99a78f','4e7553b4-373d-452f-bc89-3f4ad9a')
+       inner join amrs.obs o on o.encounter_id = e.encounter_id 
+       and o.concept_id in (1412,1109,1113,10667,7502,163414,8292,9043,1932,8070,12,8064,7113,307,5949,8061,832,8065,8067,6171)
+       and o.voided=0
 where e.voided=0
 group by e.patient_id,visit_date;
 
